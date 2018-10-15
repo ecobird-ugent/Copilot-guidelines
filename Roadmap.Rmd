@@ -9,6 +9,8 @@ output:
 Each study has a Main Researcher (MR) and one or more 'co-pilots' (CP).
 Additional collaborators can be involved as well.
 
+It is the MR and co-pilot's responsibility that everything is in accordance with the preregistration. Note that in some situations, it might be useful to write all the code (including the analysis scripts) *before* the experiment is preregistered. These scripts can be included in the preregistration.
+
 # PROGRAMMING THE EXPERIMENT
 
 ### STEP 1: CREATE A REMOTE AND LOCAL REPOSITORY IN GITHUB
@@ -16,9 +18,9 @@ Additional collaborators can be involved as well.
 
 - Step 1a: create a new private repository on GitHub. This will be the *remote* repository for the study ([GitHub help: Creating a repository](https://help.github.com/articles/creating-a-new-repository/)).
     - include a README file and add a GNU licence
-    - select 'Python' in gitignore  
-- Step 1b: clone the repository to create a *local copy* on their computer ([GitHub help: cloning a repository](https://help.github.com/articles/cloning-a-repository/)).
-- Step 1c: add 'collaborators' via the repository's Settings tab:
+    - select 'Python' in gitignore
+- Step 1b: clone the repository to create a *local copy* on your computer ([GitHub help: cloning a repository](https://help.github.com/articles/cloning-a-repository/)).
+- Step 1c: add the following 'collaborators' via the repository's Settings tab:
     - the co-pilot
     - the PI of the project
     - any other (internal or external) collaborators
@@ -35,29 +37,34 @@ Additional collaborators can be involved as well.
 
 - Step 2a: Add the folders as described in the lab's data management guidelines (DMG).
 - Step 2b: Move the LICENSE file to the software folder (as a different licence will be used for the data).
+- ***Optional* Step 2c: If personal or sensitive data are collected, the data folder should ALWAYS be added to the gitignore file.**
+
 
 ### STEP 3: PROGRAM THE EXPERIMENT
   **WHO: THE MR**
 
-- The MR programs the PsychoPy experiment and adds all relevant information to the documentation folder (see the lab's DMG). It is recommended to commit after all major changes to the files, and that local commits are regularly pushed to the remote repository (as extra back-up).
+- The MR programs the (PsychoPy) experiment and adds all relevant information to the documentation folder (see the lab's DMG). It is recommended to commit after all major changes (version control), and that local commits are regularly pushed to the remote repository (as extra back-up).
 - Once everything is finished and the local and remote branches are up-to-date, the MR informs the co-pilot (via GitHub) that the experiment is ready for review.
 
 ### STEP 4: EXPERIMENT CHECK
   **WHO: THE CO-PILOT**
 
 - Step 4a: The co-pilot creates a new branch ([GitHub help: creating branches](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/))
-- Step 4b: The co-pilot clones the repository to create a local copy (see above for help)
+- Step 4b: The co-pilot clones the repository to create a local copy (see above)
 - Step 4c: The co-pilot checks the code and documentation. When a potential problem or issue is detected, the co-pilot can immediately make the changes, or alternatively, raise the issue via GitHub ([GitHub help: About issues](https://help.github.com/articles/about-issues/)). The former is recommended for minor issues; the latter is recommended for more substantial issues.
-- Step 4d: It is advisable to commit after major changes, and to leave a message for each commit. This can be a general note (to be added to the commit). But you can also add individual comments on specific changes ([Short demo video](single_comment_demo.mp4)):
-  - Commit the changes
-  - Go to the commit overview of your branch, and select the relevant commit. This will display the changed files.
-  - In these files, hover over the changes (indicated in red or green; for deletions and additions, respectively). When a blue 'plus' sign appears, click on it, and a comment box will appear.
+- Step 4d: It is advisable to commit after major changes, and to leave a message for each commit. This can be a general note (to be added to the commit). But individual comments on specific changes can be added as well.
+  - How to make individual comments?
+    - First commit the changes
+    - Then go to the commit overview of your branch, and select the relevant commit. This will display the changed files.
+    - In these files, hover over the changes (indicated in red or green; for deletions and additions, respectively). When a blue 'plus' sign appears, click on it, and a comment box will appear.
+    - Click ([here](single_comment_demo.mp4)) for a short demo video.
 - Step 4d: Once all checks are completed and suggested changes have been made, the co-pilot creates a Pull request. Again, it is recommended to add some extra information to this Pull Request.
 
 ### STEP 5: MERGING THE PULL REQUEST
   **WHO: THE MR**
 
 When the MR receives the Pull Request, s/he can review the changes ([GitHub help: Reviewing proposed changes in a pull request](https://help.github.com/articles/reviewing-proposed-changes-in-a-pull-request/).
+
   - If everything is ok, the pull request can be merged.
   - Alternatively, the MR can submit feedback that must be addressed before merging (see also Step 4d).
 
@@ -66,13 +73,14 @@ Steps 3–5 can be repeated if necessary (e.g. when extra features are added)
 ### STEP 6: RUNNING THE EXPERIMENT
   **WHO: THE MR**
 
-Install the experiment on the computers in the lab:
-  - Go to GitHub Desktop, and download a copy of the experiment, or simply copy your local repository. Make sure that the repository is up-to-date.
+The following instructions are for experiments in which no personal or sensitive data are collected (and the data are fully anonymised). Alternative procedures should be discussed with the PI if this is not the case.
 
-
+- Step 1: Install the experiment on the computers in the lab. Simply go to to [GitHub](GitHub.com), and download a ZIP copy of the experiment. Unzip the folder and place it in an appropriate folder on the local lab computers. Two important remarks:
+  - The lab computers are shared, so do not use GitHub Desktop or git (i.e. do not create a local git repository).
+  - Make sure that the remote repository is up-to-date before you download everything!
+- Step 2: Run the experiment on the local machines...
+- Step 3: At the end of each testing session, upload the raw data on GitHub.
 
 # RUNNING THE ANALYSES
 
-Repeat Steps 3-5 for the R code. Note that it is not necessary to wait with writing the analysis scripts until the experiment is finished.
-
-It is the MR and co-pilot's responsibility that everything is in accordance with the preregistration. Note that in some situations, it might be useful to write all the code (including the analysis scripts) *before* the experiment is preregistered. These scripts can be included in the preregistration.
+Repeat Steps 3-5 for the R code; these steps may overlap with the programming of the experiment. 
