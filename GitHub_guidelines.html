@@ -314,10 +314,11 @@ $(document).ready(function () {
 
 
 <p>Each study has a Main Researcher (MR) and one or more ‘co-pilots’ (CP). Additional collaborators can be involved as well.</p>
+<p>It is the MR and co-pilot’s responsibility that everything is in accordance with the preregistration. Note that in some situations, it might be useful to write all the code (including the analysis scripts) <em>before</em> the experiment is preregistered. These scripts can be included in the preregistration.</p>
 <section id="programming-the-experiment" class="level1">
 <h1>PROGRAMMING THE EXPERIMENT</h1>
-<section id="step-1-create-a-remote-and-local-repository-in-github" class="level3">
-<h3>STEP 1: CREATE A REMOTE AND LOCAL REPOSITORY IN GITHUB</h3>
+<section id="step-1-create-a-remote-repository-in-github" class="level3">
+<h3>STEP 1: CREATE A REMOTE REPOSITORY IN GITHUB</h3>
 <p><strong>WHO: THE MR</strong></p>
 <ul>
 <li>Step 1a: create a new private repository on GitHub. This will be the <em>remote</em> repository for the study (<a href="https://help.github.com/articles/creating-a-new-repository/">GitHub help: Creating a repository</a>).
@@ -325,14 +326,13 @@ $(document).ready(function () {
 <li>include a README file and add a GNU licence</li>
 <li>select ‘Python’ in gitignore</li>
 </ul></li>
-<li>Step 1b: clone the repository to create a <em>local copy</em> on your computer (<a href="https://help.github.com/articles/cloning-a-repository/">GitHub help: cloning a repository</a>).</li>
-<li>Step 1c: add the following ‘collaborators’ via the repository’s Settings tab:
+<li>Step 1b: add the following ‘collaborators’ via the repository’s Settings tab:
 <ul>
 <li>the co-pilot</li>
 <li>the PI of the project</li>
 <li>any other (internal or external) collaborators</li>
 </ul></li>
-<li><em>Optional</em> Step 1d: Via Settings &gt; Branches, the MR can add a ‘Branch protection rule’. (<a href="https://help.github.com/articles/about-branches/">GitHub help: about branches</a>)For example, it might be useful to protect the master branch. To do this, follow the these steps:
+<li><em>Optional</em> Step 1c: Via Settings &gt; Branches, the MR can add a ‘Branch protection rule’. (<a href="https://help.github.com/articles/about-branches/">GitHub help: about branches</a>)For example, it might be useful to protect the master branch. To do this, follow the these steps:
 <ul>
 <li>Click on ‘Add rule’</li>
 <li>‘Apply rule to’ &gt; enter ‘master’</li>
@@ -344,13 +344,14 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 </section>
-<section id="step-2-create-file-structure-of-the-local-repository" class="level3">
-<h3>STEP 2: CREATE FILE STRUCTURE OF THE LOCAL REPOSITORY</h3>
+<section id="step-2-create-the-local-repository" class="level3">
+<h3>STEP 2: CREATE THE LOCAL REPOSITORY</h3>
 <p><strong>WHO: THE MR</strong></p>
 <ul>
-<li>Step 2a: Add the folders as described in the lab’s data management guidelines (DMG).</li>
-<li>Step 2b: Move the LICENSE file to the software folder (as a different licence will be used for the data).</li>
-<li><strong><em>Optional</em> Step 2c: If personal or sensitive data are collected, the data folder should ALWAYS be added to the gitignore file.</strong></li>
+<li>Step 2a: clone the repository to create a <em>local copy</em> on your computer (<a href="https://help.github.com/articles/cloning-a-repository/">GitHub help: cloning a repository</a>).</li>
+<li>Step 2b: Add the folders as described in the lab’s data management guidelines (DMG).</li>
+<li>Step 2c: Move the LICENSE file to the software folder (as a different licence will be used for the data).</li>
+<li><strong><em>Optional</em> Step 2d: If personal or sensitive data are collected, the data folder should ALWAYS be added to the gitignore file.</strong></li>
 </ul>
 </section>
 <section id="step-3-program-the-experiment" class="level3">
@@ -408,8 +409,7 @@ $(document).ready(function () {
 </section>
 <section id="running-the-analyses" class="level1">
 <h1>RUNNING THE ANALYSES</h1>
-<p>Repeat Steps 3-5 for the R code. Note that it is not necessary to wait with writing the analysis scripts until the experiment is finished.</p>
-<p>It is the MR and co-pilot’s responsibility that everything is in accordance with the preregistration. Note that in some situations, it might be useful to write all the code (including the analysis scripts) <em>before</em> the experiment is preregistered. These scripts can be included in the preregistration.</p>
+<p>Repeat Steps 3-5 for the R code; these steps may overlap with the programming of the experiment.</p>
 </section>
 
 
