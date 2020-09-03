@@ -1,5 +1,5 @@
 ---
-title: "CTRL-IMPACT LAB: CO-PILOTTING VIA GITHUB"
+title: "CTRL-IMPACT LAB: CO-PILOTING VIA GITHUB"
 output:
   html_document:
     toc: false
@@ -8,21 +8,35 @@ output:
 
 Each study has a Main Researcher (MR) and one or more 'co-pilots' (CP).
 Additional collaborators can be involved as well.
+The co-pilot system thus serves two goals: it is a quality control system and facilitates mutual learning.
 
-It is the MR and co-pilot's responsibility that everything is in accordance with the preregistration. Note that in some situations, it might be useful to write all the code (including the analysis scripts) *before* the experiment is preregistered. These scripts can be included in the preregistration.
+
+# FINDING A CP
+- When the MR is looking for a CP, the MR already specifies the research idea of the project and the required skills
+- The CP does not necessarily have to be a lab member; for example, when no one of the lab members has the skills that are required for the MR's project, the MR looks for an appropriate CP in other labs
+- Note that there is a distinction between a collaborator and a CP: If the collaborator provides specific skills for the MR's project, the MR acts as CP for this part of the project; in addition, a third person shadows the whole process as CP
+
+# COMMUNICATION BETWEEN THE MR AND THE CP
+- At the beginning of the project, the MR and the CP establish mutual expectations regarding their responsibilities and tasks 
+- The MR and the CP discuss the progress of the project regularly, and the MR informs the CP about important changes in a timely manner
+
+# INVOLVEMENT OF THE CP
+- Working with the co-pilot system for almost two years has shown that there is flexibility concerning the involvement of the CP in the MR's project 
+- Ideally, the MR involves the CP right from the beginning of the project, that is, already during the planning phase of the experiment
+- Moreover, the MR should involve the CP after each important step of the project (i.e., checking the research question and the hypotheses, checking the finalized experimental design, as well as checking the experimental code before data collection (see below) and the analysis code before data analysis (see below))
 
 # PROGRAMMING THE EXPERIMENT
 
 ### STEP 1: CREATE A REMOTE REPOSITORY IN GITHUB
   **WHO: THE MR**
 
-- Step 1a: create a new private repository on GitHub. This will be the *remote* repository for the study ([GitHub help: Creating a repository](https://help.github.com/articles/creating-a-new-repository/)).
-    - include a README file and add a GNU licence
-    - select 'Python' in gitignore
-- Step 1b: add the following 'collaborators' via the repository's Settings tab:
-    - the co-pilot
-    - the PI of the project
-    - any other (internal or external) collaborators
+- Step 1a: Create a new private repository on GitHub. This will be the *remote* repository for the study ([GitHub help: Creating a repository](https://help.github.com/articles/creating-a-new-repository/)).
+    - Include a README file and add a GNU licence
+    - Select 'Python' in gitignore
+- Step 1b: Add the following 'collaborators' via the repository's Settings tab:
+    - The CP
+    - The PI of the project
+    - Any other (internal or external) collaborators
 - *Optional* Step 1c: Via Settings > Branches, the MR can add a 'Branch protection rule'. ([GitHub help: about branches](https://help.github.com/articles/about-branches/))For example, it might be useful to protect the master branch. To do this, follow the these steps:
     - Click on 'Add rule'
     - 'Apply rule to' > enter 'master'
@@ -34,7 +48,7 @@ It is the MR and co-pilot's responsibility that everything is in accordance with
 ### STEP 2: CREATE THE LOCAL REPOSITORY
   **WHO: THE MR**
 
-- Step 2a: clone the repository to create a *local copy* on your computer ([GitHub help: cloning a repository](https://help.github.com/articles/cloning-a-repository/)).
+- Step 2a: Clone the repository to create a *local copy* on your computer ([GitHub help: cloning a repository](https://help.github.com/articles/cloning-a-repository/)).
 - Step 2b: Add the folders as described in the lab's data management guidelines (DMG).
 - Step 2c: Move the LICENSE file to the software folder (as a different licence will be used for the data).
 - ***Optional* Step 2d: If personal or sensitive data are collected, the data folder should ALWAYS be added to the gitignore file.**
@@ -43,22 +57,25 @@ It is the MR and co-pilot's responsibility that everything is in accordance with
 ### STEP 3: PROGRAM THE EXPERIMENT
   **WHO: THE MR**
 
-- The MR programs the (PsychoPy) experiment and adds all relevant information to the documentation folder (see the lab's DMG). It is recommended to commit after all major changes (version control), and that local commits are regularly pushed to the remote repository (as extra back-up).
-- Once everything is finished and the local and remote branches are up-to-date, the MR informs the co-pilot (via GitHub) that the experiment is ready for review.
+- The MR programs the (PsychoPy/jsPsych) experiment and adds all relevant information to the documentation folder (see the lab's DMG). It is recommended to commit after all major changes (version control), and that local commits are regularly pushed to the remote repository (as extra back-up).
+- Once everything is finished and the local and remote branches are up-to-date, the MR informs the CP (via GitHub) that the experiment is ready for review.
+- Note that when the MR shares the code with the CP, the code should be cleaned and annotated; if the code is messy or not annotated well enough, the CP has the right to ask the MR for improvements.
+- Before checking the code, the MR should clarify what the CP should do and define expectations; for example, MR and CP could discuss the option that as part of the review process, the CP rewrites parts of the code so that the code is "more elegant" (i.e., in our opinion, improving code is a learning experience).
 
 ### STEP 4: EXPERIMENT CHECK
-  **WHO: THE CO-PILOT**
+  **WHO: THE CP**
 
-- Step 4a: The co-pilot creates a new branch ([GitHub help: creating branches](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/))
-- Step 4b: The co-pilot clones the repository to create a local copy (see above)
-- Step 4c: The co-pilot checks the code and documentation. When a potential problem or issue is detected, the co-pilot can immediately make the changes, or alternatively, raise the issue via GitHub ([GitHub help: About issues](https://help.github.com/articles/about-issues/)). The former is recommended for minor issues; the latter is recommended for more substantial issues.
+- Step 4a: The CP creates a new branch ([GitHub help: creating branches](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/))
+- Step 4b: The CP clones the repository to create a local copy (see above)
+- Step 4c: The CP checks the code and documentation. When a potential problem or issue is detected, the CP can immediately make the changes, or alternatively, raise the issue via GitHub ([GitHub help: About issues](https://help.github.com/articles/about-issues/)). The former is recommended for minor issues; the latter is recommended for more substantial issues. Note that if the CP has lower programming skills than the MR, the CP should ask questions and challenge the MR to annotate and explain the code clearly.
 - Step 4d: It is advisable to commit after major changes, and to leave a message for each commit. This can be a general note (to be added to the commit). But individual comments on specific changes can be added as well.
   - How to make individual comments?
     - First commit the changes
     - Then go to the commit overview of your branch, and select the relevant commit. This will display the changed files.
     - In these files, hover over the changes (indicated in red or green; for deletions and additions, respectively). When a blue 'plus' sign appears, click on it, and a comment box will appear.
     - Click ([here](single_comment_demo.mp4)) for a short demo video.
-- Step 4d: Once all checks are completed and suggested changes have been made, the co-pilot creates a Pull request. Again, it is recommended to add some extra information to this Pull Request.
+- Step 4d: Once all checks are completed and suggested changes have been made, the CP creates a Pull request. Again, it is recommended to add some extra information to this Pull Request.
+- Note that the main (and official) code checking is done via Github; however, during the programming phase, MR and CP sometimes share code snippets via slack to help each other with the programming.
 
 ### STEP 5: MERGING THE PULL REQUEST
   **WHO: THE MR**
@@ -84,3 +101,11 @@ The following instructions are for experiments in which no personal or sensitive
 # RUNNING THE ANALYSES
 
 Repeat Steps 3-5 for the R code; these steps may overlap with the programming of the experiment.
+
+# MISCELLANEOUS
+- We evaluated the co-pilot system after working with it for almost two years. Most importantly, the co-pilot system gives us a feeling of security and shared responsibility. We will definitely continue using it in the lab and also when we supervise projects of students (i.e., in that case, the students are the MRs and we are the CPs).
+- We did not experience that the co-pilot system slows work down. However, in order to meet important deadlines, the MR could provide the CP with a timeline so that the CP can plan ahead and complete the required reviews in time.
+- Regarding analysis code (i.e., mainly for behavioral experiments), we are discussing the possibility that the CP writes their own code from scratch to produce the same results as the MR instead of reviewing the MR's code. However, we are aware that in that case, a third person is in theory needed to check both versions. Moreover, with respect to code sharing on OSF, it is still unclear whether both versions or only one would be shared.
+- We are currently setting up a lab-library on Github, in which we share code that has been checked and tested in order to provide a common knowledge base for all lab members. 
+
+
