@@ -17,11 +17,11 @@ The co-pilot system thus serves two goals: it is a quality control system and fa
 - Note that there is a distinction between a collaborator and a CP: If the collaborator provides specific skills for the MR's project, the MR acts as CP for this part of the project; in addition, a third person shadows the whole process as CP
 
 # COMMUNICATION BETWEEN THE MR AND THE CP
-- At the beginning of the project, the MR and the CP establish mutual expectations regarding their responsibilities and tasks 
+- At the beginning of the project, the MR and the CP establish mutual expectations regarding their responsibilities and tasks
 - The MR and the CP discuss the progress of the project regularly, and the MR informs the CP about important changes in a timely manner
 
 # INVOLVEMENT OF THE CP
-- Working with the co-pilot system for almost two years has shown that there is flexibility concerning the involvement of the CP in the MR's project 
+- Working with the co-pilot system for almost two years has shown that there is flexibility concerning the involvement of the CP in the MR's project
 - Ideally, the MR involves the CP right from the beginning of the project, that is, already during the planning phase of the experiment
 - Moreover, the MR should involve the CP after each important step of the project (i.e., checking the research question and the hypotheses, checking the finalized experimental design, as well as checking the experimental code before data collection (see below) and the analysis code (see below))
 
@@ -52,7 +52,7 @@ The co-pilot system thus serves two goals: it is a quality control system and fa
 - Step 2a: Clone the repository to create a *local copy* on your computer ([GitHub help: cloning a repository](https://help.github.com/articles/cloning-a-repository/)).
 - Step 2b: Add the folders as described in the lab's [data management guidelines (DMG)](https://github.com/fredvbrug/Data-management-guidelines).
 - Step 2c: Move the LICENSE file to the software folder (as a different licence will be used for the data).
-- ***Optional* Step 2d: If personal or sensitive data are collected, the data folder should ALWAYS be added to the gitignore file.**
+- *Optional* Step 2d: If personal or sensitive data are collected, the data folder should ALWAYS be added to the gitignore file.
 
 
 ### STEP 3: PROGRAM THE EXPERIMENT
@@ -114,6 +114,4 @@ Repeat Steps 3-5 for the R code; these steps may overlap with the programming of
 - We evaluated the co-pilot system after working with it for almost two years. Most importantly, the co-pilot system gives us a feeling of security and shared responsibility. We will definitely continue using it in the lab and also when we supervise projects of students (i.e., in that case, the students are the MRs and we are the CPs).
 - We did not experience that the co-pilot system slows work down. However, in order to meet important deadlines, the MR could provide the CP with a timeline so that the CP can plan ahead and complete the required reviews in time.
 - Regarding analysis code (i.e., mainly for behavioral experiments), we are discussing the possibility that the CP writes their own code from scratch to produce the same results as the MR instead of reviewing the MR's code. However, we are aware that in that case, a third person is in theory needed to check both versions. Moreover, with respect to code sharing on OSF, it is still unclear whether both versions or only one would be shared.
-- We are currently setting up a lab repository on Github, in which we share code that has been checked and tested in order to provide a common knowledge base for all lab members. 
-
-
+- We are currently setting up a lab repository on Github, in which we share code that has been checked and tested in order to provide a common knowledge base for all lab members.
