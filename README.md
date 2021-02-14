@@ -1,2 +1,2 @@
-# Ctrl-ImpAct-copilot-roadmap
+# CoBE-copilot-roadmap
 Roadmap for the co-pilot system of the 'Cognition, Behavior, & Ecology' (CoBE) lab
